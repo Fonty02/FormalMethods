@@ -1,16 +1,11 @@
-#pip install visual-automata
-from visual_automata.fa.dfa import VisualDFA
-
+import networkx as nx
 import json
+import matplotlib.pyplot as plt
 
 def fromJSONtoDict(filepath):
     with open(filepath, 'r') as file:
         json_string = file.read()
     return json.loads(json_string)
-
-
-
-
 
 def run_dfa(dfa, input_string):
     current_state = dfa["initial_state"]
@@ -26,40 +21,35 @@ def run_dfa(dfa, input_string):
     return "Accepted" if current_state in dfa["accepting_states"] else "Rejected"
 
 def draw_dfa(dfa_description):
-    states = set()
-    input_symbols = set()
-    for s in dfa_description["states"]:
-        states.add(s)
-    for a in dfa_description["alphabet"]:
-        input_symbols.add(a)
-    initial_state = dfa_description["initial_state"]
-    final_states = set()
-    for f in dfa_description["accepting_states"]:
-        final_states.add(f)
-    transitions = {}
+    G = nx.DiGraph()
     for t in dfa_description["transitions"]:
-        if t["from"] not in transitions:
-            transitions[t["from"]] = {}
-        transitions[t["from"]][t["input"]] = t["to"]
-    #for every state, if there is no transition for a symbol, add a transition to a dead state
-    dead_state = "q_dead"
-    states.add(dead_state)
-    for s in states:
-        if s not in transitions:
-            transitions[s] = {}
-        for i in input_symbols:
-            if i not in transitions[s]:
-                transitions[s][i] = dead_state
-    
-    dfa = VisualDFA(states=states, input_symbols=input_symbols, transitions=transitions, initial_state=initial_state, final_states=final_states)
-    dfa.show_diagram()
+        G.add_edge(t["from"], t["to"], label=t["input"])
+    pos = nx.spring_layout(G)
+    edge_labels = nx.get_edge_attributes(G, 'label')
+    node_colors=[]
+    for node in G.nodes():
+        if node==dfa_description["initial_state"]:
+            node_colors.append("yellow")
+        elif node in dfa_description["accepting_states"]:
+            node_colors.append("green")
+        else:
+            node_colors.append("grey")
+    nx.draw(G, pos, node_color=node_colors, with_labels=True, node_size=2000, font_size=20, font_weight="bold", width=2, edge_color="gray")
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+    plt.scatter([],[], color="yellow", label="Initial State")
+    plt.scatter([],[], color="green", label="Accepting State")
+    plt.scatter([],[], color="grey", label="Normal State")
+    plt.legend(scatterpoints=1, frameon=False, labelspacing=1, title="Node Colors")
+    plt.title("DFA")
+    plt.size=(20,20)
+    plt.show()
     
     
 
 
 dfa_description=fromJSONtoDict("def.json")
+draw_dfa(dfa_description)
 print(run_dfa(dfa_description, "a"))
 print(run_dfa(dfa_description, "b"))
 print(run_dfa(dfa_description, "aab"))
 print(run_dfa(dfa_description, "adsada"))
-draw_dfa(dfa_description)
