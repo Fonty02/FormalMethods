@@ -30,7 +30,25 @@
 \usepackage{bm}
 \usepackage{multirow}
 \usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black,backref=page]{hyperref}
+
+
+
+
 \begin{document}
+
+
+\lstset{ 
+  language=Python,
+  framesep=1pt,
+  xleftmargin=0pt,
+  framexleftmargin=0pt,
+  frame=tb,
+  framerule=1pt,
+  breaklines=true,
+  keywordstyle=\color{blue}\bfseries,
+  showstringspaces=false
+}
 \input{pages/front.tex}
 \newpage
 \tableofcontents
