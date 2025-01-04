@@ -1,0 +1,56 @@
+\section{Dataset}
+\subsection{Introduction to the dataset}
+Introduction to CASAS Dataset
+
+In this study, we utilize a dataset from the Center for Advanced Studies in Adaptive Systems (CASAS). CASAS is a renowned research center focused on developing adaptive systems, particularly in the realm of smart environments and ubiquitous computing. The center provides a variety of datasets aimed at advancing the understanding and development of systems that interact intelligently with their surroundings.
+
+The CASAS dataset contains data collected from sensor-equipped environments, typically used for applications such as activity recognition, healthcare monitoring, and smart home automation. These datasets often include information from sensors such as motion detectors, door sensors, temperature sensors, and other smart devices that track user behaviors and environmental conditions.
+
+For process mining, CASAS datasets offer valuable insights into real-world human activities, allowing researchers to analyze patterns of behavior, optimize processes, and improve system performance. By using CASAS data, we can model and analyze the underlying processes, gaining a deeper understanding of complex behaviors in smart environments.
+
+\subsection{Preprocessing}
+
+Below is the Python code used for formatting a CSV file:
+
+\begin{lstlisting}[caption={Format CSV Function}]
+def format_csv(input_file, output_file):
+    formatted_rows = []
+    try:
+        with open(input_file, 'r') as file:
+            lines = file.readlines()
+            formatted_rows.append("Timestamp, CaseID, Activity")
+            for line in lines:
+                line = line.strip()
+                if not line:  # Ignore empty lines
+                    continue
+                elements = line.split()
+                if len(elements) >= 4:  
+                    timestamp = f"{elements[0]} {elements[1]}"
+                    case_id = elements[2]
+                    activity = ' '.join(elements[3:])
+                    formatted_row = f"{timestamp}, {case_id}, {activity}"
+                    formatted_rows.append(formatted_row)
+        with open(output_file, 'w', newline='') as file:
+            for row in formatted_rows:
+                file.write(row + '\n')
+    except Exception as e:
+        print(f"A problem occurred while formatting the CSV file: {e}")
+\end{lstlisting}
+
+The function \texttt{format\_csv} reads a CSV file and formats it into a new CSV file with the columns \texttt{Timestamp}, \texttt{CaseID}, and \texttt{Activity}. The function extracts the timestamp, case ID, and activity from each line. It then writes the formatted rows to the output file.
+
+
+
+\begin{lstlisting}[caption={CSV to XES Conversion}]
+    def csv_to_xes(input_file):
+        data = pd.read_csv(input_file, sep=",")
+        cols = ['time:timestamp', 'case:concept:name','concept:name']
+        data.columns = cols
+        data['time:timestamp'] = pd.to_datetime(data['time:timestamp'])
+        data['concept:name'] = data['concept:name'].astype(str)
+        log = log_converter.apply(data, variant=log_converter.Variants.TO_EVENT_LOG)
+        output_name = input_file.split(".")[0] + ".xes"
+        write_xes.write_xes(log, output_name)
+    \end{lstlisting}
+
+The function \texttt{csv\_to\_xes} reads a CSV file and converts it into an XES file. It uses the \texttt{log\_converter} and \texttt{write\_xes} functions from the \texttt{pm4py} library to convert the CSV data into an event log. The event log is then written to an XES file with the same name as the input file.

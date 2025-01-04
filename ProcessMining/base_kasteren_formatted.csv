@@ -1,4 +1,6 @@
 Timestamp, CaseID, Activity
+2008-02-25 00:20:14, HallBedroomDoor, HallBedroomDoor ON None
+2008-02-25 09:33:41, HallBedroomDoor, HallBedroomDoor ON GoToBed
 2008-02-25 09:33:47, HallBedroomDoor, HallBedroomDoor ON GoToBed
 2008-02-25 09:36:43, HallToiletDoor, HallToiletDoor ON None
 2008-02-25 09:37:20, HallBathroomDoor, HallBathroomDoor ON UseToilet

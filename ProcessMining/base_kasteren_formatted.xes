@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <log xes.version="1849-2016" xes.features="nested-attributes" xmlns="http://www.xes-standard.org/">
-	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
 	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext" />
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext" />
 	<string key="origin" value="csv" />
 	<trace>
 		<string key="concept:name" value=" HallBedroomDoor" />
+		<event>
+			<date key="time:timestamp" value="2008-02-25T00:20:14" />
+			<string key="concept:name" value=" HallBedroomDoor ON None" />
+		</event>
+		<event>
+			<date key="time:timestamp" value="2008-02-25T09:33:41" />
+			<string key="concept:name" value=" HallBedroomDoor ON GoToBed" />
+		</event>
 		<event>
 			<date key="time:timestamp" value="2008-02-25T09:33:47" />
 			<string key="concept:name" value=" HallBedroomDoor ON GoToBed" />

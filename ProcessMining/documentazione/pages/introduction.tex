@@ -1,0 +1,191 @@
+\section{Introduction to Process Mining}
+
+\subsection{Petri Nets}
+
+Petri nets are a mathematical and graphical model used to represent distributed and concurrent systems. In this model, systems are represented as networks composed of nodes and directed arcs. The nodes represent the states of the system, while the arcs represent transitions between these states. Petri nets are widely used in computer science to model complex systems, such as parallel processing systems, production control systems, and data processing systems.
+
+\paragraph{Components of Petri Nets}
+\begin{itemize}
+    \item \textbf{Places}:
+    \begin{itemize}
+        \item Represent states or conditions within the system.
+        \item Typically depicted as circles.
+        \item A place can hold tokens that represent the system's current state.
+    \end{itemize}
+    \item \textbf{Transitions}:
+    \begin{itemize}
+        \item Represent events or actions that cause changes in the system.
+        \item Typically depicted as rectangles or bars.
+        \item A transition occurs (fires) when there are sufficient tokens in the connected places to satisfy the preconditions.
+    \end{itemize}
+    \item \textbf{Tokens}:
+    \begin{itemize}
+        \item Represent the dynamic state of the system at any given time.
+        \item Tokens are placed in the places and can move through the network as transitions fire.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Process Mining}
+Process mining is a discipline that uses data analysis techniques to improve the understanding and optimization of business processes. It relies on the digital recording of data related to business processes, which is then analyzed to identify opportunities for improvement and optimization. Process mining includes several techniques, such as process visualization, analysis of wait times and durations, automatic discovery of process models, and analysis of deviations from established models. The end result is a deeper understanding of business processes, which can be used to implement solutions for their optimization. Process mining is a valuable technology for many companies and organizations, as it helps identify inefficiencies in processes, reduce waiting times, and improve service quality to customers. Furthermore, process mining offers an intuitive visualization of business processes, which facilitates communication and collaboration among different stakeholders.
+
+A process consists of actions (possibly concurrent) performed by agents (human or artifacts). Its dynamic behavior can be characterized in terms of events referring to identifiable actions (including decisions on the next task to be performed). Atomic activities are represented as single events, while activities that span a significant amount of time are represented by the interval between the start and end of the corresponding events. 
+
+\subsection{Directly-Follows Graph (DFG)}
+
+The \textbf{Directly-Follows Graph (DFG)} is a graphical representation used in \textit{process mining} to describe the direct relationships between activities in a process. In this graph:
+\begin{itemize}
+    \item The \textbf{nodes} represent the activities (or events) that occur in the process.
+    \item The \textbf{edges} represent the direct "follows" relationship, meaning that one activity immediately follows another in the event log.
+    \item The \textbf{direction of the edges} indicates the sequence of execution, with an edge from Activity A to Activity B meaning that Activity B directly follows Activity A.
+    \item The \textbf{edge weight} often represents the frequency with which one activity follows another.
+\end{itemize}
+
+The DFG helps in visualizing the flow of the process and is often used as a foundation for process discovery algorithms, such as Alpha Miner, Inductive Miner, and Heuristic Miner.
+
+
+\subsubsection{Alpha Miner}
+The \textbf{Alpha Miner algorithm} is a foundational technique in \textit{process mining} used to discover process models from event logs. It reconstructs a workflow model, typically represented as a Petri net, based on the sequence and concurrency of events. Below is a brief explanation:
+
+\paragraph{Key Concepts}
+\begin{itemize}
+    \item \textbf{Event Log}: A collection of traces, where each trace is a sequence of events (activities) performed during a process instance.
+    \item \textbf{Causal Relations}: The algorithm identifies relationships between activities:
+    \begin{itemize}
+        \item \textit{Direct causality} ($A \rightarrow B$): Activity $A$ directly precedes activity $B$ in the log.
+        \item \textit{Concurrency} ($A \parallel B$): Activities $A$ and $B$ can occur in any order, indicating parallel execution.
+        \item \textit{No relation} ($A \# B$): No observable relationship between $A$ and $B$.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Steps of the Alpha Miner Algorithm}
+\begin{enumerate}
+    \item \textbf{Preprocessing}: Parse the event log to extract traces and their activities.
+    \item \textbf{Identify Relations}:
+    \begin{itemize}
+        \item Determine which activities are causally related, concurrent, or unrelated.
+    \end{itemize}
+    \item \textbf{Build a Petri Net}:
+    \begin{itemize}
+        \item Create \textit{places} (conditions) to represent causal dependencies.
+        \item Add \textit{transitions} for each activity and connect them via places based on the identified relations.
+    \end{itemize}
+    \item \textbf{Generate Initial and Final Places}:
+    \begin{itemize}
+        \item Define the starting and ending conditions of the process.
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+\subsubsection{Inductive Miner Algorithm}
+
+The \textbf{Inductive Miner algorithm} is a popular technique in \textit{process mining} that generates process models from event logs. Unlike the Alpha Miner, it guarantees the creation of sound workflow models by recursively dividing and conquering the event log data. Below is an overview of the algorithm:
+
+\paragraph{Key Concepts}
+\begin{itemize}
+    \item \textbf{Event Log}: A collection of traces where each trace represents a sequence of activities in a process instance.
+    \item \textbf{Behavioral Patterns}: The algorithm identifies the following key patterns in the event log:
+    \begin{itemize}
+        \item \textit{Sequence}: Activities follow each other in a strict order.
+        \item \textit{Concurrency}: Activities can occur in parallel.
+        \item \textit{Choice}: One activity is chosen from several alternatives.
+        \item \textit{Loops}: Activities repeat a certain number of times.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Steps of the Inductive Miner Algorithm}
+\begin{enumerate}
+    \item \textbf{Preprocessing}: Parse the event log and ensure it contains traces of activities with start and end points.
+    \item \textbf{Partitioning the Log}:
+    \begin{itemize}
+        \item Divide the event log based on directly-follows relationships.
+        \item Identify patterns (e.g., sequence, concurrency, choice, or loop) based on how activities relate to one another.
+    \end{itemize}
+    \item \textbf{Recursive Construction}:
+    \begin{itemize}
+        \item Create a submodel for each partition.
+        \item Combine submodels using operators (\textit{sequence, concurrency, choice, loop}) to form the overall process model.
+    \end{itemize}
+    \item \textbf{Generate a Petri Net or Process Tree}:
+    \begin{itemize}
+        \item Translate the resulting model into a Petri net or process tree for visualization and analysis.
+    \end{itemize}
+\end{enumerate}
+
+
+\subsubsection{Heuristic Miner Algorithm}
+
+The \textbf{Heuristic Miner algorithm} is a process discovery technique used in \textit{process mining}. It extends the capabilities of the Alpha Miner by handling noise and incompleteness in event logs, making it more robust for real-world scenarios. The algorithm identifies causal relationships and constructs a dependency graph to represent the process.
+
+\paragraph{Key Concepts}
+\begin{itemize}
+    \item \textbf{Event Log}: A collection of traces, where each trace is a sequence of events (activities) performed in a process instance.
+    \item \textbf{Causal Dependency Measures}:
+    \begin{itemize}
+        \item \textit{Directly Follows Relation}: Determines if activity $A$ is frequently followed by activity $B$ in the log.
+        \item \textit{Dependency Score}: Quantifies the strength of the causal relationship between activities based on their occurrence patterns.
+    \end{itemize}
+    \item \textbf{Thresholds}: Used to filter out weak or noisy relations, focusing only on the most significant dependencies.
+    \item \textbf{Dependency Graph}: A directed graph where nodes represent activities, and edges indicate dependencies, weighted by their strength.
+\end{itemize}
+
+\paragraph{Steps of the Heuristic Miner Algorithm}
+\begin{enumerate}
+    \item \textbf{Preprocessing}: Parse the event log to extract traces and their activities.
+    \item \textbf{Calculate Dependency Metrics}:
+    \begin{itemize}
+        \item Compute the frequency of directly follows relations between pairs of activities.
+        \item Calculate the \textit{dependency score} for each pair to determine the strength of their causal relationship.
+    \end{itemize}
+    \item \textbf{Filter Relations}:
+    \begin{itemize}
+        \item Use predefined thresholds to remove weak or noisy relationships.
+        \item Retain only significant dependencies.
+    \end{itemize}
+    \item \textbf{Construct a Dependency Graph}:
+    \begin{itemize}
+        \item Create a directed graph with nodes as activities and weighted edges as dependency scores.
+    \end{itemize}
+    \item \textbf{Generate a Process Model}:
+    \begin{itemize}
+        \item Convert the dependency graph into a workflow model, such as a Petri net or a process tree.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Comparison}
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Adjust row height
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+    \hline
+    \textbf{Aspect}          & \textbf{Alpha Miner}                      & \textbf{Inductive Miner}              & \textbf{Heuristic Miner}               \\ \hline
+    \textbf{Main Feature}    & Discovers simple process models           & Guarantees sound models               & Handles noise and incomplete event logs \\ \hline
+    \textbf{Limitations}     & Sensitive to noise, struggles with complex loops & Limited to predefined patterns (e.g., sequence, loop) & Results depend on threshold settings   \\ \hline
+    \end{tabularx}
+    \caption{Comparison of Alpha Miner, Inductive Miner, and Heuristic Miner algorithms.}
+    \label{tab:comparison}
+    \end{table}
+
+\subsubsection{Evaluation Metrics}
+
+
+\begin{itemize}
+    \item \textbf{Fitness}: It evaluates whether the model can reproduce the behavior observed in the log.
+    
+    \item \textbf{Precision}: It indicates whether the model allows execution sequences that were not present in the log.
+    
+    \item \textbf{Simplicity}: It evaluates the complexity of the discovered process model. A simpler model is typically more understandable and easier to analyze.
+    
+    \item \textbf{Generalization}: It measures the ability of the discovered model to handle unseen behavior beyond
+\end{itemize}
+
+
+
+
+
+

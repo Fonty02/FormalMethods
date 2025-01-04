@@ -26,7 +26,7 @@ def format_csv(input_file, output_file):
             #Add the header
             formatted_rows.append("Timestamp, CaseID, Activity")
             # Format each line in the file
-            for line in lines[2:]:
+            for line in lines:
                 line = line.strip()
                 if not line:  # Ignore empty lines
                     continue
@@ -99,24 +99,22 @@ def plot_metrics(alpha_metrics, heuristic_metrics, inductive_metrics):
     plt.close()
 
 
-
-# Funzione di Heuristic Mining (modificata per restituire 4 metriche)
 def Heuristic_mining(file_path):
+    """
+    This function performs the Heuristic Miner algorithm on an event log.
+    Args:
+        file_path (str): Path to the XES file
+        Returns:
+        tuple: Tuple containing the metrics of the Heuristic Miner
+    """
     event_log = pm4py.read_xes(file_path)
     net, initial_marking, final_marking = heuristics_miner.apply(event_log)
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
     pn_visualizer.save(gviz, "images/heuristic_miner.png")
     
-    # Evaluate the model using the token-based replay
-    fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"]  # Direct dictionary
-    
-    # Get precision using the updated API
+    fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"]
     precision_value = precision.apply(event_log, net, initial_marking, final_marking)  # Direct float value
-    
-    # Calculate simplicity using the correct method
     simplicity_value = simplicity.apply(net)
-    
-    # Calculate other metrics (Generalization)
     generalization_value = generalization.apply(event_log, net, initial_marking, final_marking)
     
     l=[fitness_value, precision_value, simplicity_value, generalization_value]
@@ -136,21 +134,13 @@ def Inductive_mining(file_path):
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
     pn_visualizer.save(gviz, "images/inductive_miner.png")
 
-    # Evaluate the model using the token-based replay
-    fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"]  # Direct dictionary
-    
-    # Get precision using the updated API
-    precision_value = precision.apply(event_log, net, initial_marking, final_marking)  # Direct float value
-    
-    # Calculate simplicity using the correct method
+
+    fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"] 
+    precision_value = precision.apply(event_log, net, initial_marking, final_marking)
     simplicity_value = simplicity.apply(net)
-    
-    # Calculate other metrics (Generalization)
     generalization_value = generalization.apply(event_log, net, initial_marking, final_marking)
     
-    # Visualize the discovered Petri net
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
-    #return a list of the metrics
     l=[fitness_value, precision_value, simplicity_value, generalization_value]
     return l
 
@@ -167,19 +157,10 @@ def Alpha_mining(file_path):
     # Apply Alpha Miner to discover the Petri net
     net, initial_marking, final_marking = alpha_miner.apply(event_log)
     
-    # Evaluate the model using the token-based replay
     fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"]  # Direct dictionary
-    
-    # Get precision using the updated API
     precision_value = precision.apply(event_log, net, initial_marking, final_marking)  # Direct float value
-    
-    # Calculate simplicity using the correct method
     simplicity_value = simplicity.apply(net)
-    
-    # Calculate other metrics (Generalization)
     generalization_value = generalization.apply(event_log, net, initial_marking, final_marking)
-    
-    # Visualize the discovered Petri net
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
     pn_visualizer.save(gviz, "images/alpha_miner.png")
     
@@ -207,6 +188,9 @@ if __name__ == "__main__":
     format_csv(input_file, output_file)
     csv_to_xes(output_file)
     Path = output_file.split(".")[0] + ".xes"
+
+    # Process Map
+    Process_Map(Path)
     
     # Execute the mining
     alpha_metrics = Alpha_mining(Path)
@@ -214,6 +198,4 @@ if __name__ == "__main__":
     inductive_metrics = Inductive_mining(Path)
 
     plot_metrics(alpha_metrics, heuristic_metrics, inductive_metrics)
-    
-    # Process Map
-    Process_Map(Path)
+
