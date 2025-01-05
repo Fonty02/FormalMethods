@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (MiKTeX 24.3) (format=lualatex 2024.6.10)  4 JAN 2025 19:50
+This is LuaHBTeX, Version 1.18.0 (MiKTeX 24.3) (format=lualatex 2024.6.10)  5 JAN 2025 19:47
  system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/fonta/Desktop/repo/FormalMethods/ProcessMining/documentazione/main
@@ -1342,7 +1342,7 @@ Package hyperref Info: Link coloring ON on input line 38.
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )
 (./pages/front.tex
-<images/uniba-logo.png, id=58, 869.2475pt x 289.08pt>
+<images/uniba-logo.png, id=86, 869.2475pt x 289.08pt>
 File: images/uniba-logo.png Graphic file (type png)
 <use images/uniba-logo.png>
 Package luatex.def Info: images/uniba-logo.png  used on input line 3.
@@ -1409,44 +1409,44 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6]) [7] (./pages/dataset.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 15.
+nput line 17.
+ [8]
 LaTeX Font Info:    Trying to load font information for OML+lmr on input line 2
-7.
+9.
 
 (C:/Users/fonta/AppData/Local/Programs/MiKTeX/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-7.
+9.
 
 (C:/Users/fonta/AppData/Local/Programs/MiKTeX/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <12> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 27.
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
-8.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 29.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 3
+0.
 
 (C:/Users/fonta/AppData/Local/Programs/MiKTeX/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-28.
+30.
 
 (C:/Users/fonta/AppData/Local/Programs/MiKTeX/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 28.
- [8]
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 30.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-40.
+42.
 
 (C:/Users/fonta/AppData/Local/Programs/MiKTeX/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
 [9] (./pages/risultati.tex
-<images/dfg.png, id=179, 2578.63374pt x 4378.3575pt>
+<images/dfg.png, id=214, 2578.63374pt x 4378.3575pt>
 File: images/dfg.png Graphic file (type png)
 <use images/dfg.png>
 Package luatex.def Info: images/dfg.png  used on input line 6.
@@ -1456,7 +1456,7 @@ Overfull \vbox (59.53363pt too high) has occurred while \output is active []
 
 
 [11<./images/dfg.png>]
-<images/alpha_miner.png, id=190, 903.375pt x 3371.59625pt>
+<images/alpha_miner.png, id=225, 903.375pt x 3371.59625pt>
 File: images/alpha_miner.png Graphic file (type png)
 <use images/alpha_miner.png>
 Package luatex.def Info: images/alpha_miner.png  used on input line 12.
@@ -1466,7 +1466,7 @@ Overfull \vbox (24.49992pt too high) has occurred while \output is active []
 
 
 [12<./images/alpha_miner.png>]
-<images/heuristic_miner.png, id=197, 4317.12875pt x 5111.095pt>
+<images/heuristic_miner.png, id=232, 4317.12875pt x 5111.095pt>
 File: images/heuristic_miner.png Graphic file (type png)
 <use images/heuristic_miner.png>
 Package luatex.def Info: images/heuristic_miner.png  used on input line 18.
@@ -1476,7 +1476,7 @@ Overfull \vbox (24.43784pt too high) has occurred while \output is active []
 
 
 [13<./images/heuristic_miner.png>]
-<images/inductive_miner.png, id=203, 8871.1425pt x 4819.00375pt>
+<images/inductive_miner.png, id=238, 8871.1425pt x 4819.00375pt>
 File: images/inductive_miner.png Graphic file (type png)
 <use images/inductive_miner.png>
 Package luatex.def Info: images/inductive_miner.png  used on input line 24.
@@ -1486,7 +1486,7 @@ Overfull \vbox (24.46106pt too high) has occurred while \output is active []
 
 
 [14<./images/inductive_miner.png>]
-<images/metrics.png, id=209, 867.24pt x 578.16pt>
+<images/metrics.png, id=244, 867.24pt x 578.16pt>
 File: images/metrics.png Graphic file (type png)
 <use images/metrics.png>
 Package luatex.def Info: images/metrics.png  used on input line 32.
@@ -1496,24 +1496,180 @@ Overfull \hbox (9.55861pt too wide) in paragraph at lines 32--33
  [][] 
  []
 
-) [15<./images/metrics.png>] (./main.aux)
+) [15<./images/metrics.png>] (./pages/llm.tex
+<images/dfgGPT.png, id=251, 3825.29124pt x 5828.77625pt>
+File: images/dfgGPT.png Graphic file (type png)
+<use images/dfgGPT.png>
+Package luatex.def Info: images/dfgGPT.png  used on input line 27.
+(luatex.def)             Requested size: 424.05202pt x 591.45pt.
+ [16]
+Overfull \vbox (24.41978pt too high) has occurred while \output is active []
+
+
+[17<./images/dfgGPT.png>]
+<images/alpha_minerGPT.png, id=262, 3308.36pt x 3969.83125pt>
+File: images/alpha_minerGPT.png Graphic file (type png)
+<use images/alpha_minerGPT.png>
+Package luatex.def Info: images/alpha_minerGPT.png  used on input line 33.
+(luatex.def)             Requested size: 424.04413pt x 591.51166pt.
+
+Overfull \vbox (24.48145pt too high) has occurred while \output is active []
+
+
+[18<./images/alpha_minerGPT.png>]
+<images/heuristic_minerGPT.png, id=269, 5912.0875pt x 5966.29pt>
+File: images/heuristic_minerGPT.png Graphic file (type png)
+<use images/heuristic_minerGPT.png>
+Package luatex.def Info: images/heuristic_minerGPT.png  used on input line 39.
+(luatex.def)             Requested size: 423.99205pt x 591.4748pt.
+
+Overfull \vbox (24.44458pt too high) has occurred while \output is active []
+
+
+[19<./images/heuristic_minerGPT.png>]
+<images/inductive_minerGPT.png, id=276, 9487.445pt x 6404.92876pt>
+File: images/inductive_minerGPT.png Graphic file (type png)
+<use images/inductive_minerGPT.png>
+Package luatex.def Info: images/inductive_minerGPT.png  used on input line 45.
+(luatex.def)             Requested size: 424.02129pt x 591.46933pt.
+
+Overfull \vbox (24.43912pt too high) has occurred while \output is active []
+
+
+[20<./images/inductive_minerGPT.png>]
+<images/metricsGPT.png, id=284, 867.24pt x 578.16pt>
+File: images/metricsGPT.png Graphic file (type png)
+<use images/metricsGPT.png>
+Package luatex.def Info: images/metricsGPT.png  used on input line 53.
+(luatex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (9.55861pt too wide) in paragraph at lines 53--54
+ [][] 
+ []
+
+<images/dfgGemini.png, id=285, 1853.92625pt x 4620.26125pt>
+File: images/dfgGemini.png Graphic file (type png)
+<use images/dfgGemini.png>
+Package luatex.def Info: images/dfgGemini.png  used on input line 69.
+(luatex.def)             Requested size: 424.04613pt x 591.49013pt.
+[21<./images/metricsGPT.png>]
+Overfull \vbox (24.45992pt too high) has occurred while \output is active []
+
+
+[22<./images/dfgGemini.png>]
+<images/alpha_minerGemini.png, id=298, 903.375pt x 2937.97626pt>
+File: images/alpha_minerGemini.png Graphic file (type png)
+<use images/alpha_minerGemini.png>
+Package luatex.def Info: images/alpha_minerGemini.png  used on input line 75.
+(luatex.def)             Requested size: 424.0625pt x 591.52988pt.
+
+Overfull \vbox (24.49966pt too high) has occurred while \output is active []
+
+
+[23<./images/alpha_minerGemini.png>]
+<images/heuristic_minerGemini.png, id=305, 4835.06375pt x 5088.00874pt>
+File: images/heuristic_minerGemini.png Graphic file (type png)
+<use images/heuristic_minerGemini.png>
+Package luatex.def Info: images/heuristic_minerGemini.png  used on input line 8
+1.
+(luatex.def)             Requested size: 423.99664pt x 591.51373pt.
+
+Overfull \vbox (24.48352pt too high) has occurred while \output is active []
+
+
+[24<./images/heuristic_minerGemini.png>]
+<images/inductive_minerGemini.png, id=312, 6676.945pt x 5252.62375pt>
+File: images/inductive_minerGemini.png Graphic file (type png)
+<use images/inductive_minerGemini.png>
+Package luatex.def Info: images/inductive_minerGemini.png  used on input line 8
+7.
+(luatex.def)             Requested size: 424.03224pt x 591.4958pt.
+
+Overfull \vbox (24.46559pt too high) has occurred while \output is active []
+
+
+[25<./images/inductive_minerGemini.png>]
+<images/metricsGemini.png, id=318, 867.24pt x 578.16pt>
+File: images/metricsGemini.png Graphic file (type png)
+<use images/metricsGemini.png>
+Package luatex.def Info: images/metricsGemini.png  used on input line 95.
+(luatex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (9.55861pt too wide) in paragraph at lines 95--96
+ [][] 
+ []
+
+<images/dfgMistral.png, id=319, 2578.63374pt x 4438.5825pt>
+File: images/dfgMistral.png Graphic file (type png)
+<use images/dfgMistral.png>
+Package luatex.def Info: images/dfgMistral.png  used on input line 111.
+(luatex.def)             Requested size: 424.03973pt x 591.52962pt.
+[26<./images/metricsGemini.png>]
+Overfull \vbox (24.4994pt too high) has occurred while \output is active []
+
+
+[27<./images/dfgMistral.png>]
+<images/alpha_minerMistral.png, id=332, 903.375pt x 3070.47125pt>
+File: images/alpha_minerMistral.png Graphic file (type png)
+<use images/alpha_minerMistral.png>
+Package luatex.def Info: images/alpha_minerMistral.png  used on input line 117.
+
+(luatex.def)             Requested size: 424.0625pt x 591.50093pt.
+
+Overfull \vbox (24.47072pt too high) has occurred while \output is active []
+
+
+[28<./images/alpha_minerMistral.png>]
+<images/heuristic_minerMistral.png, id=339, 3660.67625pt x 5242.58624pt>
+File: images/heuristic_minerMistral.png Graphic file (type png)
+<use images/heuristic_minerMistral.png>
+Package luatex.def Info: images/heuristic_minerMistral.png  used on input line 
+123.
+(luatex.def)             Requested size: 424.01315pt x 591.48541pt.
+
+Overfull \vbox (24.4552pt too high) has occurred while \output is active []
+
+
+[29<./images/heuristic_minerMistral.png>]
+<images/inductive_minerMistral.png, id=346, 9123.08376pt x 4873.20625pt>
+File: images/inductive_minerMistral.png Graphic file (type png)
+<use images/inductive_minerMistral.png>
+Package luatex.def Info: images/inductive_minerMistral.png  used on input line 
+129.
+(luatex.def)             Requested size: 424.02412pt x 591.5262pt.
+
+Overfull \vbox (24.49599pt too high) has occurred while \output is active []
+
+
+[30<./images/inductive_minerMistral.png>]
+<images/metricsMistral.png, id=354, 867.24pt x 578.16pt>
+File: images/metricsMistral.png Graphic file (type png)
+<use images/metricsMistral.png>
+Package luatex.def Info: images/metricsMistral.png  used on input line 135.
+(luatex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+Overfull \hbox (9.55861pt too wide) in paragraph at lines 135--136
+ [][] 
+ []
+
+) [31<./images/metricsMistral.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B183273D373862205292326AD46D34B;1932.
+(rerunfilecheck)             Checksum: 36E1EC24E6B853933E4A3FF36492BA3E;2855.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39278 strings out of 476447
- 244226,1977958 words of node,token memory allocated
+ 39482 strings out of 476447
+ 244210,1977958 words of node,token memory allocated
  588 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 12 attribute, 63 glue_spec
 , 8 attribute_list, 2 write nodes
-   avail lists: 1:2,2:4303,3:228,4:104,5:5658,6:56,7:8324,8:3,9:11318,10:22,11:6
-54
- 60204 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:4819,3:228,4:156,5:6343,6:63,7:9148,8:3,9:12708,10:22,11:7
+22
+ 60319 multiletter control sequences out of 65536+600000
  59 fonts using 3701263 bytes
  87i,10n,88p,1110b,1016s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/fonta/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}{C:
@@ -1531,9 +1687,9 @@ x12.pfb><C:/Users/fonta/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
 pfb><C:/Users/fonta/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.p
 fb><C:/Users/fonta/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pf
 b>
-Output written on main.pdf (16 pages, 4046122 bytes).
+Output written on main.pdf (32 pages, 16765319 bytes).
 
-PDF statistics: 257 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 131072)
- 120 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 403 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 131072)
+ 176 words of extra memory for PDF output out of 10000 (max. 100000000)
 

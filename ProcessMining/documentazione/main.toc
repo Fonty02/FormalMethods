@@ -20,3 +20,10 @@
 \contentsline {subsection}{\numberline {2.1}Introduction to the dataset}{8}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Preprocessing}{8}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Results}{11}{section.3}%
+\contentsline {section}{\numberline {4}LLM}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}LLM in Process Mining}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Experiment performed}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}GPT-4o}{16}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Gemini 2.0 Flash Experimental}{21}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Mistral}{26}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Conclusion}{31}{subsection.4.3}%

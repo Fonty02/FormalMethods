@@ -95,7 +95,7 @@ def plot_metrics(alpha_metrics, heuristic_metrics, inductive_metrics):
         axes[i].set_ylim(0, 1)
     plt.tight_layout()
     plt.suptitle("Comparing Process Discovery Algorithms",  fontsize=14, y=1.02)
-    plt.savefig("images/metrics.png")
+    plt.savefig("images/metricsGPT.png")
     plt.close()
 
 
@@ -110,7 +110,7 @@ def Heuristic_mining(file_path):
     event_log = pm4py.read_xes(file_path)
     net, initial_marking, final_marking = heuristics_miner.apply(event_log)
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
-    pn_visualizer.save(gviz, "images/heuristic_miner.png")
+    pn_visualizer.save(gviz, "images/heuristic_minerGPT.png")
     
     fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"]
     precision_value = precision.apply(event_log, net, initial_marking, final_marking)  # Direct float value
@@ -132,7 +132,7 @@ def Inductive_mining(file_path):
     event_log = pm4py.read_xes(file_path)
     net, initial_marking, final_marking = pm4py.discover_petri_net_inductive(event_log)
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
-    pn_visualizer.save(gviz, "images/inductive_miner.png")
+    pn_visualizer.save(gviz, "images/inductive_minerGPT.png")
 
 
     fitness_value = fitness.apply(event_log, net, initial_marking, final_marking)["averageFitness"] 
@@ -162,7 +162,7 @@ def Alpha_mining(file_path):
     simplicity_value = simplicity.apply(net)
     generalization_value = generalization.apply(event_log, net, initial_marking, final_marking)
     gviz = pn_visualizer.apply(net, initial_marking, final_marking)
-    pn_visualizer.save(gviz, "images/alpha_miner.png")
+    pn_visualizer.save(gviz, "images/alpha_minerGPT.png")
     
     l=[fitness_value, precision_value, simplicity_value, generalization_value]
     return l
@@ -177,12 +177,12 @@ def Process_Map(file_path):
 
     event_log = pm4py.read_xes(file_path)
     dfg, start_activities, end_activities = pm4py.discover_dfg(event_log)
-    pm4py.save_vis_dfg(dfg, start_activities, end_activities, "images/dfg.png")
+    pm4py.save_vis_dfg(dfg, start_activities, end_activities, "images/dfgGPT.png")
     
 
 if __name__ == "__main__":
     
-    input_file = "base_kasteren.csv"
+    input_file = "base_kasteren_GPT.csv"
     #the output file is named input_file_name_formatted.csv
     output_file = input_file.split(".")[0] + "_formatted.csv"
     format_csv(input_file, output_file)
